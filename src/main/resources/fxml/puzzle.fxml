@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wasowski.jolka.controllers.PuzzleController">
+   <children>
+      <Button fx:id="myButton" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="50.0" text="Save" />
+      <TableView prefHeight="600.0" prefWidth="500.0">
+        <columns>
+          <TableColumn editable="false" minWidth="100.0" prefWidth="400.0" text="Question" />
+        </columns>
+      </TableView>
+   </children>
+</BorderPane>

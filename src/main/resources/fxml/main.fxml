@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wasowski.jolka.controllers.MainController">
+   <top>
+      <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="newButton" mnemonicParsing="false" onAction="#create" text="New" />
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#edit" text="Edit" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete" text="Delete" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="puzzleTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="numberColumn" prefWidth="75.0" text="Number" />
+          <TableColumn fx:id="questionsColumn" prefWidth="75.0" text="Questions" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
