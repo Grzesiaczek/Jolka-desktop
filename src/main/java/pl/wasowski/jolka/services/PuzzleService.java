@@ -1,5 +1,7 @@
 package pl.wasowski.jolka.services;
 
+import java.util.List;
+
 import javax.ws.rs.core.Response;
 
 import org.springframework.stereotype.Component;
@@ -16,14 +18,17 @@ public class PuzzleService extends DataService {
 	}
 	
 	public ObservableList<Puzzle> getData() {
-		ObservableList<Puzzle> list = FXCollections.observableArrayList();
-		Response response = getBuilder().append("puzzle/data").get();
-		System.out.println(response.readEntity(String.class));
-		return list;
+		List<Puzzle> list = getBuilder().append("puzzle/data").getList(Puzzle.class);
+		ObservableList<Puzzle> observable = FXCollections.observableArrayList(list);
+		return observable;
 	}
 	
 	public long save(Puzzle puzzle) {
 		Response response = getBuilder().append("puzzle/add").post(puzzle);
 		return response.readEntity(Long.class);
+	}
+	
+	public void remove(Puzzle puzzle) {
+		Response response = getBuilder().append("puzzle").append(puzzle.getId()).delete();
 	}
 }

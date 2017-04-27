@@ -5,13 +5,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wasowski.jolka.controllers.PuzzleController">
-   <children>
-      <Button fx:id="myButton" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="50.0" text="Save" />
-      <TableView prefHeight="600.0" prefWidth="500.0">
+<BorderPane fx:id="test" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.wasowski.jolka.controllers.PuzzleController">
+   <top>
+      <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#add" text="Add" />
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#save" text="Save" />
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" text="Back" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="questionsTable" editable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn editable="false" minWidth="100.0" prefWidth="400.0" text="Question" />
+          <TableColumn fx:id="numberColumn" prefWidth="60.0" text="Number" />
+          <TableColumn fx:id="questionColumn" prefWidth="360.0" text="Question" />
         </columns>
       </TableView>
-   </children>
+   </center>
 </BorderPane>
